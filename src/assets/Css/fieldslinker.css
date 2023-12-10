@@ -1,0 +1,70 @@
+fieldset {
+  border: 2px solid #ccc;
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 10px;
+}
+legend {
+  margin-bottom: 20px;
+  display: block;
+  color: #337ab7;
+  width: 150px;
+  font-size: 20px ;
+  border-bottom: none;
+}
+.fieldsOption {
+  margin-right: 30px;
+}
+
+.matchContainer {
+  width: 40%;
+  height: 600px;
+  margin-left: 10px;
+}
+
+.sideA,
+.sideB {
+  border: 2px solid rgb(209, 209, 209);
+  width: 200px;
+  display: block;
+  height: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.buttonHead {
+  width: 100%;
+  display: "block";
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.leftButtons {
+  float: left;
+}
+
+.rightButtons {
+  float: right;
+}
+
+.btnRestart {
+  background-color: rgb(102, 102, 223);
+  color: white;
+}
+
+.btnGet {
+  background-color: rgb(39, 175, 39);
+  color: white;
+  margin-top: 10px;
+  display: block;
+}
+
+button {
+  background-color: #337ab7;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
