@@ -4,7 +4,7 @@ import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { convertToHTML } from "draft-convert";
 
-import "../../Css/draft.css";
+import "../../assets/Css/draft.css";
 
 const FormattingTemplate = () => {
   const [editorState, setEditorState] = useState(() =>

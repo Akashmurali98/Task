@@ -9,7 +9,7 @@ legend {
   display: block;
   color: #337ab7;
   width: 150px;
-  font-size: 20px ;
+  font-size: 20px;
   border-bottom: none;
 }
 .fieldsOption {
@@ -22,12 +22,20 @@ legend {
   margin-left: 10px;
 }
 
+.disable {
+  width: 40%;
+  height: 600px;
+  margin-left: 10px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .sideA,
 .sideB {
   border: 2px solid rgb(209, 209, 209);
   width: 200px;
   display: block;
-  height: 30px;
+  max-height: 50px;
   margin-bottom: 10px;
   text-align: left;
   padding: 10px;
@@ -68,3 +76,29 @@ button {
   border-radius: 10px;
   margin-left: 10px;
 }
+
+.wrap {
+  word-wrap: break-word;
+}
+
+/* a: {
+
+} */
+.noWrap {
+  text-wrap: nowrap;
+}
+
+.hoverSideA ,.hoverSideB{
+  border: 2px solid rgb(209, 209, 209);
+  width: 200px;
+  display: block;
+  max-height: 50px;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
+}
+.hoverSideA:hover,.hoverSideB:hover {
+  background-color: #337ab7;
+}
+

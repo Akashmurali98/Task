@@ -1,10 +1,9 @@
-import "./App.css";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import FiledsLinker from "./Components/FieldsLinker/FiledsLinker";
-import FormattingTemplate from "./Components/Format/draft";
+import FiledsLinker from "./Components/FieldsLinker/FieldsLinker";
+import FormattingTemplate from "./Components/Format/Draft";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./Shared/Header";
-import PdfViewer from "./Components/Pdf/pdf";
+import PdfViewer from "./Components/Pdf/Pdf";
 
 function App() {
   return (
