@@ -9,14 +9,16 @@ const FiledsLinker = () => {
   const [optionThree, setOptionThree] = useState("");
   const [optionFour, setOptionFour] = useState("noWrap");
   const [optionFive, setOptionFive] = useState(false);
+
   const [question, setQuestion] = useState([
-    { name: "firstName", id: "name", color: "green" },
-    { name: "phone", id: "mobile", color: "voilet" },
-    { name: "email", id: "mail", color: "orange" },
-    { name: "roleasdkgakjdhjasdhjsadjdasjh", id: "design", color: "yellow" },
-    { name: "birthdayksjfhkjasdhjashdaskdakdbakj", id: "date", color: "red" },
+    { name: "firstName", id: "firstName", color: 'green' },
+    { name: "phone", id: "mobile" , color: 'red' },
+    { name: "email", id: "mail", color: 'blue' },
+    { name: "role", id: "design", color: 'yellow' },
+    { name: "birthday", id: "date", color: 'orange' },
   ]);
 
+  
   const [answer, setAnswer] = useState([
     { name: "Akashkhjh", id: "firstname" },
     { name: "9884501166909089", id: "phoneNum" },
@@ -24,7 +26,6 @@ const FiledsLinker = () => {
     { name: "Software Developer asdkjashdkj", id: "designation" },
     { name: "23/11/1998", id: "dob" },
   ]);
-  const [selectedItems, setSelectedItems] = useState([]);
 
   const option1 = ["one to One", "one to Many"];
   const option2 = ["Enable", "Disable"];
@@ -35,18 +36,10 @@ const FiledsLinker = () => {
   const [rightMatched, setRightMatched] = useState([]);
 
   const handleDragSideA = (result) => {
-    setLeftMatched([...leftMatched, result.source.index]);
-   const a ={
-    a:result.source.index,
-    b:result.source.color
-   }
-    setRightMatched([...rightMatched, a]);
-    console.log(rightMatched)
-    if (!result.destination) return;
-    const updatedQuestion = [...question];
-    const [removed] = updatedQuestion.splice(result.source.index, 1);
-    updatedQuestion.splice(result.destination.index, 0, removed);
-    setQuestion(updatedQuestion);
+    setLeftMatched([...leftMatched, result?.source?.index]);
+    setRightMatched([...rightMatched, result?.destination?.index]);
+    if (!result?.destination) return;
+    
   };
   const handleMobile = (status) => {
     setOptionFive(status);
@@ -110,7 +103,7 @@ const FiledsLinker = () => {
           <label>Mobile:</label>
         </div>
       </fieldset>
-      <div className={optionTwo == "Enable" ? "matchContainer" : "disable"}>
+      <div className={optionTwo === "Enable" ? "matchContainer" : "disable"}>
         <button className="btnRestart">Restart</button> <br></br>
         <DragDropContext onDragEnd={handleDragSideA}>
           <Droppable droppableId="1">
@@ -134,6 +127,7 @@ const FiledsLinker = () => {
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
                           ref={provided.innerRef}
+
                         >
                           <span
                             className={
@@ -177,7 +171,7 @@ const FiledsLinker = () => {
                           className={optionFour == "noWrap" ? "noWrap" : "wrap"}
                           style={{
                             backgroundColor: rightMatched?.includes(index)
-                              ? question?.[leftMatched.indexOf(index)]?.color
+                              ? question?.[rightMatched.indexOf(index)]?.color
                               : "",
                           }}
                         >
@@ -193,6 +187,8 @@ const FiledsLinker = () => {
           </Droppable>
         </DragDropContext>
       </div>
+      <button>Save Links</button>
+
     </>
   );
 };
